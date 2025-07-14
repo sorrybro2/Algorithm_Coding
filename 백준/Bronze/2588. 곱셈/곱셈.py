@@ -1,12 +1,12 @@
-x = int(input())
-y = int(input())
+one = int(input())
+two = int(input())
 
-first = x*(y%10)
-sec = x*(y//10%10)
-third = x*(y//100)
-allSum = first + sec*10 + third*100
+fst = one*(two%10)
+sec = one*(two//10%10)
+trd = one*(two//100)
 
-print(first)
+print(fst)
 print(sec)
-print(third)
-print(allSum)
+print(trd)
+print(fst+(sec*10)+(trd*100))
+
