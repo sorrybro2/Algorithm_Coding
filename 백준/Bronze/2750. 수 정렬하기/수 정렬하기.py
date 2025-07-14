@@ -1,12 +1,12 @@
-N = int(input())
+n = int(input())
 
-ans = [0]*N
+arr = [0]*n
 
-for i in range(N):
-    n = int(input())
-    ans[i] += n
+for i in range(n):
+    num = int(input())
+    arr[i] += num
 
-ans.sort()
+arr.sort()
 
-for i in range(N):
-    print(ans[i])
+for i in range(n):
+    print(arr[i])
