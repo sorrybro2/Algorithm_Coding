@@ -1,10 +1,9 @@
 n = int(input())
 
-for i in range(n):
-    data = input().split()
-    cnt = int(data[0])
-    word = data[1]
-    answer = ""
+for _ in range(n):
+    cnt, word = input().split()
+    cnt = int(cnt)
+    new_word = ""
     for i in range(len(word)):
-        answer += word[i]*cnt
-    print(answer)
+        new_word += word[i]*cnt
+    print(new_word)
