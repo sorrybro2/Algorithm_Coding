@@ -5,21 +5,21 @@ target = [list(map(int,input().split()))for _ in range(n)]
 
 ans = 0
 
-def can_shoot(a,b):
-    global ans
-    for x in hunt_posi:
-        cur_l = (a-x)**2 + (b**2)
-        gun_l = l**2
-        if cur_l <= gun_l:
-            ans +=1
+for a, b in target:
+    start = 0
+    end = len(hunt_posi)-1
+    while start <= end:
+        mid = (start+end)//2
+        min = -l+a+b
+        max = l+a-b
+        if min <= hunt_posi[mid] <= max:
+            ans += 1
             break
+        elif hunt_posi[mid] < max:
+            start = mid + 1
+        else:
+            end = mid - 1
 
-
-for i in range(n):
-    t_x = target[i][0]
-    t_y = target[i][1]
-    can_shoot(t_x,t_y)
 
 print(ans)
-
 
