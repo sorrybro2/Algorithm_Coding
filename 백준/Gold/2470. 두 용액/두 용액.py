@@ -1,22 +1,24 @@
+import sys
+input = sys.stdin.readline
+
 n = int(input())
-water = list(map(int, input().split()))
-water.sort()
-min_hap = float('inf')
+arr = list(map(int, input().split()))
+min = float('inf')
+ans = []
+arr.sort()
 
 start = 0
 end = n-1
-ans = (water[start],water[end])
 
-while start < end:
-    hap = water[start] + water[end]
-
-    if abs(hap) < min_hap :
-        min_hap = abs(hap)
-        ans = (water[start], water[end])
-
+while start<end:
+    hap = arr[start] + arr[end]
+    if abs(hap) < abs(min):
+        min = hap
+        ans = arr[start],arr[end]
+    
     if hap < 0:
         start += 1
     else:
         end -= 1
 
-print(f"{ans[0]} {ans[1]}")
+print(ans[0],ans[1])
