@@ -5,29 +5,29 @@ n = int(input())
 tree = {}
 
 for _ in range(n):
-    root, left, right = map(str, input().split())
-    tree[root] = [left, right]
+    a,b,c = map(str,input().split())
+    tree[a] = [b,c]
 
-def preorder(node):
-    if node == '.':
+def preorder(x):
+    if x == '.':
         return
-    print(node, end='')
-    preorder(tree[node][0])
-    preorder(tree[node][1])
+    print(x, end='')
+    preorder(tree[x][0])
+    preorder(tree[x][1])
 
-def inorder(node):
-    if node == '.':
+def inorder(x):
+    if x == '.':
         return
-    inorder(tree[node][0])
-    print(node, end='')
-    inorder(tree[node][1])
+    inorder(tree[x][0])
+    print(x,end='')
+    inorder(tree[x][1])
 
-def postorder(node):
-    if node == '.':
+def postorder(x):
+    if x == '.':
         return
-    postorder(tree[node][0])
-    postorder(tree[node][1])
-    print(node, end='')
+    postorder(tree[x][0])
+    postorder(tree[x][1])
+    print(x,end='')
 
 preorder('A')
 print()
