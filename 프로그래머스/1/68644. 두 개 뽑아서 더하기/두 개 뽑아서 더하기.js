@@ -1,12 +1,14 @@
 function solution(numbers) {
-    var resultBefore = [];
+    
+    let arr = [];
+    
     for(let i = 0; i < numbers.length; i++){
         for(let j = i+1; j < numbers.length; j++){
-            const sum = numbers[i] + numbers[j];
-            resultBefore.push(sum);
-        }       
+            arr.push(numbers[i]+numbers[j]);
+        }
     }
-    const answer = [...new Set(resultBefore)];
-    answer.sort((a,b)=>a-b);
+    
+    let answer = [...new Set(arr)];
+    answer.sort((a,b) => a-b);
     return answer;
 }
