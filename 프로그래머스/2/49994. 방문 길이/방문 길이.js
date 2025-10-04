@@ -1,3 +1,4 @@
+//유사 그래프 문제
 function direction(x, y, dir){
     switch (dir){
         case "U" : 
