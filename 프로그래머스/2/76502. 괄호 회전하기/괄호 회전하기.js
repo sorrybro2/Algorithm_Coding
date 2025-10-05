@@ -1,3 +1,4 @@
+// 괄호 회전
 function isPair(s){
     let stack = [];
     for(const c of s){
