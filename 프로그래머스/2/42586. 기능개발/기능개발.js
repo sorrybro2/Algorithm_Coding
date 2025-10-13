@@ -1,27 +1,26 @@
 function solution(progresses, speeds) {
     
+    let remindDay = [];
     let answer = [];
-    let workdays = [];
-    let count = 1;
     
     for(let i = 0; i < progresses.length; i++){
-        const r = 100 - progresses[i];
-        const workday = r / speeds[i];
-        workdays.push(Math.ceil(workday));
+        const left = 100 - progresses[i];
+        const leftday = Math.ceil(left / speeds[i]);
+        remindDay.push(leftday);
     }
     
-    let maxDay = workdays[0];
+    let max = remindDay[0];
+    let count = 1;
     
-    for(let i = 1; i < workdays.length; i++){
-        if(maxDay >= workdays[i]){
-            count++;
+    for(let i = 1; i < remindDay.length; i++){
+        if(remindDay[i] <= max){
+            count += 1;
         }else{
             answer.push(count);
+            max = remindDay[i];
             count = 1;
-            maxDay = workdays[i];
         }
-    }
+    } 
     answer.push(count);
-    
     return answer;
 }
