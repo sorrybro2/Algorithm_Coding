@@ -1,17 +1,15 @@
 const fs = require("fs");
 const input = fs.readFileSync("/dev/stdin").toString().trim().split("\n");
 
-const t = parseInt(input[0]);
+const t = Number(input[0]);
 for (let i = 1; i <= t; i++) {
   let [a, b] = input[i].split(" ").map(Number);
-  a = a % 10;
-
+  a %= 10;
   if (a === 0) {
     console.log(10);
     continue;
   }
 
-  // 각 숫자별 주기 패턴
   const cycle = {
     1: [1],
     2: [2, 4, 8, 6],
