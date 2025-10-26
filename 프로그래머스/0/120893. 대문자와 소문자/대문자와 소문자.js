@@ -1,5 +1,4 @@
 function solution(my_string) {
-    let answer = my_string.split('')
-                .map(ch => ch == ch.toUpperCase() ? ch.toLowerCase() : ch.toUpperCase()).join('');
+    var answer = my_string.split('').map(char => char == char.toUpperCase() ? char.toLowerCase() : char.toUpperCase()).join('');
     return answer;
 }
