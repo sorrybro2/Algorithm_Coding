@@ -1,9 +1,8 @@
-n = int(input())
+T = int(input())
 
-for _ in range(n):
-    cnt, word = input().split()
-    cnt = int(cnt)
-    new_word = ""
-    for i in range(len(word)):
-        new_word += word[i]*cnt
-    print(new_word)
+for i in range(T):
+    n, str = input().split()
+    ans = []
+    for i in str:
+        ans.append(i*int(n))
+    print(''.join(ans))
