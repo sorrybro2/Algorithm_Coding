@@ -1,16 +1,13 @@
 n = int(input())
-
 arr = []
-
-for i in range(1,n+1):
-	s = str(i)
+for i in range(1, n+1):
 	cnt = 0
-	for ch in s:
-		if ch in '369':
+	for num in str(i):
+		if num in '369':
 			cnt += 1
 	if cnt > 0:
 		arr.append('-'*cnt)
 	else:
-		arr.append(s)
+		arr.append(str(i))
 
 print(' '.join(arr))
