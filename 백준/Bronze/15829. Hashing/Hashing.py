@@ -8,4 +8,4 @@ for i in range(len(word)):
     al = alphabet.index(word[i])+1
     ans += al * (31 ** i)
     
-print(ans)
+print(ans%1234567891)
