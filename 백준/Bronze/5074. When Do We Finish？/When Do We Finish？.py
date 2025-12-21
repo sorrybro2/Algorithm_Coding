@@ -1,22 +1,21 @@
 while(True):
-    c1, c2 = input().split()
-
-    if c1 == "00:00" and c2 == "00:00":
+    t1, t2 = input().split()
+    
+    if t1 == "00:00" and t2 == "00:00":
         break
 
-    hour1, min1 = map(int, c1.split(':'))
-    hour2, min2 = map(int, c2.split(':'))
+    h1, m1 = map(int, t1.split(":"))
+    h2, m2 = map(int, t2.split(":"))
 
-    
-    sum_min = min1 + min2
-    extra_hour = int(sum_min / 60)
-    min = sum_min % 60
+    total_m = m1 + m2
+    remain_h = int(total_m / 60)
+    minate = total_m % 60
 
-    sum_hour = hour1 + hour2 + extra_hour
-    hour = sum_hour % 24
-    extra_day = int(sum_hour / 24)
+    total_h = h1 + h2 + remain_h
+    remain_d = int(total_h / 24)
+    hour = total_h % 24
 
-    if extra_day > 0:
-        print(f"{hour:02d}:{min:02d} +{extra_day}")
+    if remain_d > 0:
+        print(f"{hour:02d}:{minate:02d} +{remain_d}")
     else:
-        print(f"{hour:02d}:{min:02d}")
+        print(f"{hour:02d}:{minate:02d}")
